@@ -1,11 +1,15 @@
 #!/usr/bin/python3
 from sys import argv
 
-i = 1
+from sys import argv
+
+a = int(argv[1])
+b = int(argv[2])
+
 def main():
-    if len(argv) != 1:
-        while (i < len(argv)):
-            print("{}".format(int(argv[i])))
-            i += 1
+    print("{}".format(add(a, b)))
+
+def add(a, b):
+    return (a + b)
 if __name__ == "__main__":
     main()
