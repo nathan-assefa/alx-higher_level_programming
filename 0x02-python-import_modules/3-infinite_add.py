@@ -1,15 +1,14 @@
 #!/usr/bin/python3
+#!/usr/bin/python3
 from sys import argv
-
-from sys import argv
-
-a = int(argv[1])
-b = int(argv[2])
 
 def main():
-    print("{}".format(add(a, b)))
+    _sum = 0;
+    i = 1
+    while (i < len(argv)):
+        _sum += int(argv[i])
+        i += 1
 
-def add(a, b):
-    return (a + b)
+    print(_sum)
 if __name__ == "__main__":
     main()
