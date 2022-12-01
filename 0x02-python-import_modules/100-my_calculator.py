@@ -12,4 +12,6 @@ if __name__ == "__main__":
         print("Unknown operator. Available operators: +, -, * and /")
         exit(1)
     else:
-        print("{} + {} = {}".format(argv[1], argv[2], argv[3], add(int(argv[1]), int(argv[3]))))
+        a = int(argv[1])
+        b = int(argv[3])
+        print("{} {} = {}".format(argv[1], argv[2], argv[3], add(a, b)))
