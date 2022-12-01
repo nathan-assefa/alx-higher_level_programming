@@ -2,12 +2,12 @@
 from sys import argv
 
 if len(argv) == 2:
-    print("{} {}".format(len(argv) - 1, "argument:"))
+    print("{} {}:".format(len(argv) - 1, "argument"))
     print("{}: {}".format(len(argv) - 1, argv[1]))
 elif len(argv) == 1:
-    print("{} {}".format(len(argv) - 1, "arguments."))
+    print("{} {}.".format(len(argv) - 1, "arguments"))
 else:
-    print("{} {}".format(len(argv) - 1, "arguments:"))
+    print("{} {}:".format(len(argv) - 1, "arguments"))
 
     i = 1
     while (i < len(argv)):
