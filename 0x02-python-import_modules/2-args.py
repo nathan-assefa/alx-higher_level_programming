@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 from sys import argv
-def main():
+if __name__ == "__main__":
     if len(argv) == 2:
         print("{} {}:".format(len(argv) - 1, "argument"))
         print("{}: {}".format(len(argv) - 1, argv[1]))
@@ -13,5 +13,3 @@ def main():
         while (i < len(argv)):
             print("{}: {}".format(i, argv[i]))
             i += 1
-if __name__ == "__main__":
-    main()
