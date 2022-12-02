@@ -2,7 +2,7 @@
 from sys import argv
 from calculator_1 import add, sub, mul, div
 
-operator = ['+', '-', '*', '/']
+operator = {"+": add, "-": sub, "*": mul, "/": div}
 
 if __name__ == "__main__":
     if len(argv) - 1 != 3:
@@ -14,4 +14,5 @@ if __name__ == "__main__":
     else:
         a = int(argv[1])
         b = int(argv[3])
-        print("{} {} = {}".format(argv[1], argv[2], argv[3], add(a, b)))
+        print("{} {} {} = {}".format(argv[1], argv[2], argv[3], operator[argv[2]](a, b)))
+
