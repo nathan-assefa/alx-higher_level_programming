@@ -5,5 +5,5 @@ def print_matrix_integer(matrix=[[]]):
     else:
         for i in range(len(matrix)):
             for j in range(len(matrix)):
-                print(matrix[j][j], end=" ")
+                print(matrix[i][j], end=" ")
             print()
