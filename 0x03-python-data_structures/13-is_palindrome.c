@@ -62,9 +62,9 @@ int is_palindrome(listint_t **head)
 		{
 			tmp = tmp->next;
 			dup = dup->next;
-			continue;
 		}
-		return (1)
+		else
+			return (0);
 	}
-	return (0);
+	return (1);
 }
