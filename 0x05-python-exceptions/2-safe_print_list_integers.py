@@ -5,7 +5,7 @@ def safe_print_list_integers(my_list=[], x=0):
     i = 0
     try:
         for num in my_list[:x]:
-            print(num, end="")
+            print("{}".format(num), end="")
             i += 1
         print()
         return i
