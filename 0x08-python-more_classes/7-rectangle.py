@@ -7,9 +7,7 @@ class Rectangle:
     """public class attributes"""
     number_of_instances = 0
 
-    """public class attributes and
-    be any type
-    """
+    """public class attributes that can be any type"""
     print_symbol = '#'
 
     """Initializing a new object"""
