@@ -19,7 +19,7 @@ class Rectangle:
                 hash_str += '#'
             if i != self.__height - 1:
                 hash_str += '\n'
-            return hash_str
+        return hash_str
 
     """Getting width attribute"""
     @property
