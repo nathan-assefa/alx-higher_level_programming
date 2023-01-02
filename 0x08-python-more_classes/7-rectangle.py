@@ -23,7 +23,7 @@ class Rectangle:
         hash_str = ''
         for i in range(self.__height):
             for j in range(self.__width):
-                hash_str += Rectangle.print_symbol
+                hash_str += str(self.print_symbol)
             if i != self.__height - 1:
                 hash_str += '\n'
         return hash_str
