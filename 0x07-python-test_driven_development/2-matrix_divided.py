@@ -9,10 +9,10 @@ either integer or float
 
 
 def matrix_divided(matrix, div):
-    if not type(matrix) == list or
-    not all(isinstance(ty, list) for ty in matrix):
-        raise TypeError("matrix must be a matrix (list of lists) \
-                of integers/floats")
+    if not type(matrix) == list or not all(
+            isinstance(ty, list) for ty in matrix):
+        raise TypeError(
+                "matrix must be a matrix (list of lists) of integers/floats")
     size_list = 0
     for _list in matrix:
         if size_list == 0:
@@ -32,5 +32,4 @@ def matrix_divided(matrix, div):
 
 if __name__ == "__main__":
     import doctest
-
     doctest.testmod()
