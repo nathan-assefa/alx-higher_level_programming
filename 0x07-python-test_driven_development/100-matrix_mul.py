@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""This function returns the product of two
+matrixes. The two parameters m_a and m_a are
+the two matrixes the is going to be multiplied
+by the the function
+"""
 
 def matrix_mul(m_a, m_b):
     if type(m_a) != list:
@@ -40,3 +45,8 @@ def matrix_mul(m_a, m_b):
             _list.append(item)
         matrix.append(_list)
     return matrix
+
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod()
