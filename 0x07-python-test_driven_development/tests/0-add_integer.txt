@@ -33,6 +33,7 @@ Int NaN:
     ValueError: invalid literal for int() with base 10: 'NaN'
 
 Float overflow:
+
     >>> add_integer(float('inf')) 
     Traceback (most recent call last):
     ...
