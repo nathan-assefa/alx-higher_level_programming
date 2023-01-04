@@ -9,6 +9,12 @@ going to be parsed
 
 
 def text_indentation(text):
+    """text is the string that is going to be
+    manipulated by the function. There are
+    special charachters that should be used
+    to parse the string
+    """
+
     if type(text) is not str:
         raise TypeError("text must be a string")
 
