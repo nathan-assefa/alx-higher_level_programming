@@ -7,6 +7,8 @@ the function builds the square
 
 
 def print_square(size):
+    """prints # size times"""
+
     if not isinstance(size, int):
         raise TypeError("size must be an integer")
     if size < 0:
