@@ -5,7 +5,13 @@ the two matrixes the is going to be multiplied
 by the the function
 """
 
+
 def matrix_mul(m_a, m_b):
+    """Multiplying two integers and the two parameters
+    are matrixes, and the number of column of m_a should
+    be equal to m_b to perform the operation
+    """
+
     if type(m_a) != list:
         raise TypeError("m_a must be a list")
     if type(m_b) != list:
