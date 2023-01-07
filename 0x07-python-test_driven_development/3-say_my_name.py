@@ -1,4 +1,4 @@
-#!/bin/usr/python3
+#!/usr/bin/python3
 
 """This function prints the full name, and the
 first parameter is the first name of a person and
