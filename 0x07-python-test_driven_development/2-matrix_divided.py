@@ -9,6 +9,8 @@ either integer or float
 
 
 def matrix_divided(matrix, div):
+    """Diving matrixe by div"""
+
     if not type(matrix) == list or not all(
             isinstance(ty, list) for ty in matrix):
         raise TypeError(
