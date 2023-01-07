@@ -7,6 +7,8 @@ the second parameteris the last name of a person
 
 
 def say_my_name(first_name, last_name=""):
+    """To print full name """
+
     if type(first_name) != str:
         raise TypeError("first_name must be a string")
     if type(last_name) != str:
