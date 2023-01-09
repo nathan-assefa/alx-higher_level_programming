@@ -5,7 +5,6 @@ raises an exception
 """
 
 
-
 def add_attribute(obj, attribute, value):
     """to add new atributes to an object"""
     print(obj)
