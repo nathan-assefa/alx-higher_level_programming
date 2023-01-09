@@ -1,4 +1,4 @@
-#!usr/bin/python3
+#!/usr/bin/python3
 """This function returns True if and onlu if
 the an object is an instance of a supper or base
 class. Otherwise this function returns false
