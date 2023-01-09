@@ -8,4 +8,4 @@ from the specified class ; otherwise False.
 def inherits_from(obj, a_class):
     """Returns True of Flase depednig on the object type"""
 
-    return False if type(obj) is a_class else isinstance(obj, a_class)
+    return issubclass(type(obj), a_class) and type(obj) != a_class
