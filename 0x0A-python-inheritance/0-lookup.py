@@ -8,4 +8,4 @@ def lookup(obj):
     """Obj is an object whose attributes
     will be displayed by this function
     """
-    print(dir(obj))
+    return dir(obj)
