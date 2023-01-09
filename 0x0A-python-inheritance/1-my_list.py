@@ -1,12 +1,9 @@
 #!/usr/bin/python3
-"""This function inheret every functionality
-from the list object. In addition to the list
-functionality, this function has also its own
-methos calld print_sorted to print the sorted
-lists
-"""
+"""MyList module"""
 
-class MuList(list):
-    """this method print a sorted list"""
+
+class MyList(list):
+    """MyList class - Inherits from list"""
     def print_sorted(self):
+        """Prints a sorted list"""
         print(sorted(self))
