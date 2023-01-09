@@ -11,4 +11,4 @@ def add_attribute(obj, attribute, value):
     if isinstance(obj, type):
         raise TypeError("[TypeError] can't add new attribute")
     print(id(obj))
-    obj.attribute = valu
+    obj.attribute = value
