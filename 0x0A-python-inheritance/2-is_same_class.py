@@ -8,6 +8,4 @@ def is_same_class(obj, a_class):
     """obj is an instance that inherets from
     a_class
     """
-    if issubclass(obj, a_class):
-        return True
-    return False
+    return type(obj) is a_class
