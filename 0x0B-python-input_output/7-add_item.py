@@ -12,4 +12,7 @@ try:
 except FileNotFoundError:
     jsonList = []
 
-save_to_json_file(jsonList.append(argv[:]), 'add_item.json')
+for item in argv[1:]:
+    jsonList.append(itme)
+
+save_to_json_file(jsonList, 'add_item.json')
