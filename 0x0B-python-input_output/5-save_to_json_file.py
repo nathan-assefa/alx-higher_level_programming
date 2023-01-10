@@ -1,0 +1,10 @@
+#!/usr/bin/python3
+"""Writing to json file from python object
+using json.dump method
+"""
+
+
+def save_to_json_file(my_obj, filename):
+    """form python object ot json file"""
+    with open(filename, 'w', encoding='utf-8') as file:
+        return json.dump(my_obj, filename)
