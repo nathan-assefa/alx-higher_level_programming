@@ -15,7 +15,6 @@ if __name__ == "__main__":
     except FileNotFoundError:
         jsonList = []
 
-    for item in argv[1:]:
-        jsonList.append(item)
+    jsonList.extend(argv[1:])
 
     save_to_json_file(jsonList, "add_item.json")
