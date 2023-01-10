@@ -9,5 +9,5 @@ def class_to_json(obj):
     """
     # a simple "return obj.__dict__" would work
     if hasattr(obj, "__dict__"):
-        return obj.__dict__.copy()
+        return obj.__dict__
     return {}
