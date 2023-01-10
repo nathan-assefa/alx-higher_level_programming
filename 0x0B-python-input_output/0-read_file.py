@@ -4,8 +4,8 @@ the content to stdout
 """
 
 
-def read_file('filename=""'):
+def read_file(filename=""):
     """open fucntion opens the file in read mode"""
-    with open('filename') as file:
+    with open('filename', 'r') as file:
         for f in file:
             print("{}".format(f.rstrip()))
