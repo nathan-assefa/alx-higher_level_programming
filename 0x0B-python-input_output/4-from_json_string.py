@@ -2,6 +2,7 @@
 """This function returns python data structure
 form json file
 """
+import json
 
 
 def from_json_string(my_str):
