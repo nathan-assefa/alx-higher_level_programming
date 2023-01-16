@@ -107,7 +107,7 @@ class Rectangle(Base):
                 - 5th argument represents y attribute
             **kwargs (dict): New key/value pairs of attributes.
         """
-        if args and len(args) != 0:
+        if args:
             a = 0
             for arg in args:
                 if a == 0:
@@ -125,7 +125,7 @@ class Rectangle(Base):
                     self.y = arg
                 a += 1
 
-        elif kwargs and len(kwargs) != 0:
+        elif kwargs:
             for k, v in kwargs.items():
                 if k == "id":
                     if v is None:
