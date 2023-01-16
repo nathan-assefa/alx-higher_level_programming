@@ -113,6 +113,7 @@ class Rectangle(Base):
                 if a == 0:
                     if arg not None:
                         self.__init__(self.width, self.height, self.x, self.y)
+                    else:
                         self.id = id
                 elif a == 1:
                     self.width = arg
