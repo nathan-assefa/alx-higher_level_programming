@@ -126,7 +126,9 @@ class Rectangle(Base):
         elif kwargs:
             for k, v in kwargs.items():
                 if k == "id":
-                    if v is not None:
+                    if v is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
                         self.id = v
                 elif k == "width":
                     self.width = v
