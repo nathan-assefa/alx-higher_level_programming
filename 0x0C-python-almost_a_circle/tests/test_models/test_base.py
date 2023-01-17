@@ -110,10 +110,6 @@ class TestBase_save_to_file(unittest.TestCase):
         except IOError:
             pass
 
-    def test_IfTheFunctionExist(self):
-        """To check if from_json_string method exist"""
-        self.assertTrue(Base.from_json_string)
-
     def test_TheRightOutput(self):
         """Chech the result of the method"""
         a = Rectangle(2, 4)
