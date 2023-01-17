@@ -34,7 +34,7 @@ class Rectangle(Base):
 
     def validation(self, key, val):
         """This function validats the data"""
-        if type(key) != int:
+        if type(value) != int:
             raise TypeError("{} must be an integer".format(key))
         if (key == "width" or key == "height") and val <= 0:
             raise ValueError("{} must be an integer".format(key))
