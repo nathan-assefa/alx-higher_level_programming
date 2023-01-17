@@ -118,7 +118,7 @@ class TestBase_save_to_file(unittest.TestCase):
         """Chech the result of the method"""
         a = Rectangle(2, 4)
         Rectangle.save_to_file([a])
-        with open("Rectangle.json") as file:
+        with open("Rectangle.json", "r") as file:
             self.assertEqual(len(file.read()), 53)
 
     def test_IfNewFileExist(self):
@@ -126,14 +126,14 @@ class TestBase_save_to_file(unittest.TestCase):
         r1 = Rectangle(10, 7, 2, 8)
         r2 = Rectangle(2, 4)
         Rectangle.save_to_file([r1, r2])
-        with open("Rectangle.json") as f:
+        with open("Rectangle.json", "r") as f:
             self.assertEqual(len(f.read()), 105)
 
     def test_TheRightOutput(self):
         """Chech the result of the method"""
         a = Square(2, 4)
         Square.save_to_file([a])
-        with open("Square.json") as file:
+        with open("Square.json", "r") as file:
             self.assertEqual(len(file.read()), 39)
 
     def test_IfNewFileExist(self):
@@ -141,7 +141,7 @@ class TestBase_save_to_file(unittest.TestCase):
         r1 = Square(10, 7, 2, 8)
         r2 = Square(2, 4)
         Square.save_to_file([r1, r2])
-        with open("Square.json") as f:
+        with open("Square.json", "r") as f:
             self.assertEqual(len(f.read()), 77)
 
     def test_save_to_file_cls_name_for_filename(self):
