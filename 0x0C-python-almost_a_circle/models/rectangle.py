@@ -140,8 +140,7 @@ class Rectangle(Base):
                     if v is not None:
                         self.x = v
                 elif k == "y":
-                    if v is not None:
-                        self.y = v
+                    self.y = v
 
     def to_dictionary(self):
         """Return the dictionary representation of a Rectangle."""
