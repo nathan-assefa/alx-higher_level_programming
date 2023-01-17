@@ -34,11 +34,11 @@ class Rectangle(Base):
 
     def validation(self, key, val):
         """This function validats the data"""
-        if type(val) != int:
+        if type(val) is not int:
             raise TypeError("{} must be an integer".format(key))
         if (key == "width" or key == "height") and val <= 0:
             raise ValueError("{} must be an integer".format(key))
-        if (key == "x" or key == "y") and val < 0:
+        elif (key == "x" or key == "y") and val < 0:
             raise ValueError("{} must be >= 0".format(key))
 
     @property
