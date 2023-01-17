@@ -94,6 +94,22 @@ class TestBase_to_json_string(unittest.TestCase):
 class TestBase_save_to_file(unittest.TestCase):
     """Unittests for testing save_to_file method of Base class."""
 
+    @classmethod
+    def tearDown(self):
+        """Delete any created files."""
+        try:
+            os.remove("Rectangle.json")
+        except IOError:
+            pass
+        try:
+            os.remove("Square.json")
+        except IOError:
+            pass
+        try:
+            os.remove("Base.json")
+        except IOError:
+            pass
+
     def test_IfTheFunctionExist(self):
         """To check if from_json_string method exist"""
         self.assertTrue(Base.from_json_string)
@@ -155,22 +171,6 @@ class TestBase_save_to_file(unittest.TestCase):
         """When invalid data passed"""
         with self.assertRaises(TypeError):
             Base.save_to_file([], 5)
-
-    @classmethod
-    def tearDown(self):
-        """Delete any created files."""
-        try:
-            os.remove("Rectangle.json")
-        except IOError:
-            pass
-        try:
-            os.remove("Square.json")
-        except IOError:
-            pass
-        try:
-            os.remove("Base.json")
-        except IOError:
-            pass
 
 
 class TestBase_from_json_string(unittest.TestCase):
