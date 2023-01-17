@@ -128,18 +128,20 @@ class Rectangle(Base):
         elif kwargs:
             for k, v in kwargs.items():
                 if k == "id":
-                    if v is None:
-                        self.__init__(self.width, self.height, self.x, self.y)
-                    else:
+                    if v is not None:
                         self.id = v
                 elif k == "width":
-                    self.width = v
+                    if v is not None:
+                        self.width = v
                 elif k == "height":
-                    self.height = v
+                    if v is not None:
+                        self.height = v
                 elif k == "x":
-                    self.x = v
+                    if v is not None:
+                        self.x = v
                 elif k == "y":
-                    self.y = v
+                    if v is not None:
+                        self.y = v
 
     def to_dictionary(self):
         """Return the dictionary representation of a Rectangle."""
