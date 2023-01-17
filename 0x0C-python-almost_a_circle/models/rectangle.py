@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-Base = __import__("Base").Base
+from models.base import Base
 """The Base class is the parent class of
 the class Rectangle, and the Rectangle class
 inherits the methods and attributs of the Base
