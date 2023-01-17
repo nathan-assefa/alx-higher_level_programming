@@ -118,7 +118,7 @@ class TestBase_save_to_file(unittest.TestCase):
 
     def test_save_to_file_two_rectangles(self):
         r1 = Rectangle(10, 7, 2, 8, 5)
-        r2 = Rectangle(2, 4, 1, 2, 3)
+        r2 = Rectangle(2, 4)
         Rectangle.save_to_file([r1, r2])
         with open("Rectangle.json", "r") as f:
             self.assertEqual(len(f.read()), 105)
