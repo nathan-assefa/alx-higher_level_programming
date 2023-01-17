@@ -32,14 +32,14 @@ class Rectangle(Base):
                 self.id, self.__x, self.__y, self.__width, self.__height
                 )
 
-    def validation(self, key, val):
+    def validation(self, name, value):
         """This function validats the data"""
-        if type(val) is not int:
-            raise TypeError("{} must be an integer".format(key))
-        if (key == "width" or key == "height") and val <= 0:
-            raise ValueError("{} must be an integer".format(key))
-        elif (key == "x" or key == "y") and val < 0:
-            raise ValueError("{} must be >= 0".format(key))
+        if type(value) is not int:
+            raise TypeError("{} must be an integer".format(name))
+        if (name == "width" or name == "height") and value <= 0:
+            raise ValueError("{} must be > 0".format(name))
+        elif (name == "x" or name == "y") and value < 0:
+            raise ValueError("{} must be >= 0".format(name))
 
     @property
     def width(self):
