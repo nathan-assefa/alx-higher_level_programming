@@ -131,14 +131,11 @@ class Rectangle(Base):
                     if v is not None:
                         self.id = v
                 elif k == "width":
-                    if v is not None:
-                        self.width = v
+                    self.width = v
                 elif k == "height":
-                    if v is not None:
-                        self.height = v
+                    self.height = v
                 elif k == "x":
-                    if v is not None:
-                        self.x = v
+                    self.x = v
                 elif k == "y":
                     self.y = v
 
