@@ -114,14 +114,14 @@ class TestBase_save_to_file(unittest.TestCase):
         r = Rectangle(10, 7, 2, 8, 5)
         Rectangle.save_to_file([r])
         with open("Rectangle.json", "r") as f:
-            self.assertEqual(len(f.read()), 53)
+            self.assertTrue(len(f.read()) == 53)
 
     def test_save_to_file_two_rectangles(self):
         r1 = Rectangle(10, 7, 2, 8, 5)
         r2 = Rectangle(2, 4, 1, 2, 3)
         Rectangle.save_to_file([r1, r2])
         with open("Rectangle.json", "r") as f:
-            self.assertEqual(len(f.read(), 105)
+            self.assertEqual(len(f.read()), 105)
 
     def test_save_to_file_one_square(self):
         s = Square(10, 7, 2, 8)
