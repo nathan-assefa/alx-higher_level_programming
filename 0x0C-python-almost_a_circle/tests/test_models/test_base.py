@@ -135,10 +135,18 @@ class TestBase_save_to_file(unittest.TestCase):
         r1 = Rectangle(10, 7, 2, 8)
         Rectangle.save_to_file([r1])
         with open("Rectangle.json") as file:
-            self.assertEqual(
-                    file.read(), '[{"x": 2, "y": 8, "id": 10, \
-                            "height": 7, "width": 10}]'
-            )
+            result = '[{"x": 2, "y": 8, "id": 10, "height": 7, "width": 10}]'
+            self.assertEqual(file.read(), result)
+
+    def test_NoArgumentPassed(self):
+        """when no argument is passed"""
+        with self.assertRaises(TypeError):
+            Base.save_to_file()
+
+    def test_InvalidData(self):
+        """When invalid data passed"""
+        with self.assertRaises(TypeError):
+            Base.save_to_file([], 5)
 
 
 class TestBase_from_json_string(unittest.TestCase):
