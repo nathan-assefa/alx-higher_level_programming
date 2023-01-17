@@ -128,7 +128,7 @@ class Rectangle(Base):
         elif kwargs:
             for k, v in kwargs.items():
                 if k == "id":
-                    self.id = v
+                self.id = v
                 elif k == "width":
                     self.width = v
                 elif k == "height":
