@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-from models.base import Base
 """The Base class is the parent class of
 the class Rectangle, and the Rectangle class
 inherits the methods and attributs of the Base
@@ -14,6 +13,7 @@ Args:
 There are also different methods in this Class used to
 set up a structure.
 """
+from models.base import Base
 
 
 class Rectangle(Base):
