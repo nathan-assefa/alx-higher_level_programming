@@ -112,6 +112,14 @@ class TestBase_save_to_file(unittest.TestCase):
 
     def test_IfNewFileExist(self):
         """Check a file created by the save_to_file method exists"""
+        r1 = Square(10, 7, 2, 8)
+        r2 = Square(2, 4)
+        Square.save_to_file([r1, r2])
+        with open("Square.json") as f:
+            self.assertEqual(len(f.read()), 77)
+
+    def test_IfNewFileExist(self):
+        """Check a file created by the save_to_file method exists"""
         r1 = Rectangle(10, 7, 2, 8)
         r2 = Rectangle(2, 4)
         Rectangle.save_to_file([r1, r2])
