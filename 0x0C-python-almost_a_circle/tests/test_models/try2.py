@@ -114,63 +114,59 @@ class TestBase_save_to_file(unittest.TestCase):
         """To check if from_json_string method exist"""
         self.assertTrue(Base.from_json_string)
 
-    def test_IfTheMethodWorks(self):
-        """Check if the save_to_file method works"""
-        self.assertTrue(Square.save_to_file)
-        self.assertTrue(Rectangle.save_to_file)
-
     def test_TheRightOutput(self):
         """Chech the result of the method"""
-        a = Rectangle(2, 4)
+        a = Rectangle(2, 4, 9, 4, 1)
         Rectangle.save_to_file([a])
         with open("Rectangle.json") as file:
             self.assertEqual(len(file.read()), 53)
 
     def test_IfNewFileExist(self):
         """Check a file created by the save_to_file method exists"""
-        r1 = Square(10, 7, 2, 8)
-        r2 = Square(2, 4)
-        Square.save_to_file([r1, r2])
-        with open("Square.json") as f:
-            self.assertEqual(len(f.read()), 77)
-
-    def test_IfNewFileExist(self):
-        """Check a file created by the save_to_file method exists"""
-        r1 = Rectangle(10, 7, 2, 8)
-        r2 = Rectangle(2, 4)
+        r1 = Rectangle(10, 7, 2, 8, 5)
+        r2 = Rectangle(2, 4, 5, 6, 9)
         Rectangle.save_to_file([r1, r2])
         with open("Rectangle.json") as f:
             self.assertEqual(len(f.read()), 105)
 
-    def test_NonePassed(self):
-        """When None passed as argument"""
-        Rectangle.save_to_file(None)
-        with open("Rectangle.json") as file:
-            self.assertEqual(file.read(), "[]")
+    def test_TheRightOutput(self):
+        """Chech the result of the method"""
+        a = Square(2, 5, 9, 8)
+        Square.save_to_file([a])
+        with open("Square.json") as file:
+            self.assertEqual(len(file.read()), 38)
 
-    def test_EmptyListPassed(self):
-        """When empty list is passed"""
-        Rectangle.save_to_file([])
-        with open("Rectangle.json") as file:
-            self.assertEqual(file.read(), "[]")
+    def test_save_to_file_cls_name_for_filename(self):
+        s = Square(10, 7, 2, 8)
+        Base.save_to_file([s])
+        with open("Base.json", "r") as f:
+            self.assertTrue(len(f.read()) == 39)
 
-    def test_TestTheReslut(self):
-        """Check what is the output of save_to_file method"""
-        r1 = Rectangle(10, 7, 2, 8)
-        Rectangle.save_to_file([r1])
-        with open("Rectangle.json") as file:
-            result = '[{"x": 2, "y": 8, "id": 10, "height": 7, "width": 10}]'
-            self.assertEqual(file.read(), result)
+    def test_save_to_file_overwrite(self):
+        s = Square(9, 2, 39, 2)
+        Square.save_to_file([s])
+        s = Square(10, 7, 2, 8)
+        Square.save_to_file([s])
+        with open("Square.json", "r") as f:
+            self.assertTrue(len(f.read()) == 39)
 
-    def test_NoArgumentPassed(self):
-        """when no argument is passed"""
+    def test_save_to_file_None(self):
+        Square.save_to_file(None)
+        with open("Square.json", "r") as f:
+            self.assertEqual("[]", f.read())
+
+    def test_save_to_file_empty_list(self):
+        Square.save_to_file([])
+        with open("Square.json", "r") as f:
+            self.assertEqual("[]", f.read())
+
+    def test_save_to_file_no_args(self):
         with self.assertRaises(TypeError):
-            Base.save_to_file()
+            Rectangle.save_to_file()
 
-    def test_InvalidData(self):
-        """When invalid data passed"""
+    def test_save_to_file_more_than_one_arg(self):
         with self.assertRaises(TypeError):
-            Base.save_to_file([], 5)
+            Square.save_to_file([], 1)
 
 
 class TestBase_from_json_string(unittest.TestCase):

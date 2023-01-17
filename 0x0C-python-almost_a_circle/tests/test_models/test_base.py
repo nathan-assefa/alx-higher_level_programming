@@ -136,19 +136,13 @@ class TestBase_save_to_file(unittest.TestCase):
         with open("Square.json") as file:
             self.assertEqual(len(file.read()), 38)
 
-    def test_save_to_file_cls_name_for_filename(self):
-        s = Square(10, 7, 2, 8)
-        Base.save_to_file([s])
-        with open("Base.json", "r") as f:
-            self.assertTrue(len(f.read()) == 39)
-
-    def test_save_to_file_overwrite(self):
-        s = Square(9, 2, 39, 2)
-        Square.save_to_file([s])
-        s = Square(10, 7, 2, 8)
-        Square.save_to_file([s])
-        with open("Square.json", "r") as f:
-            self.assertTrue(len(f.read()) == 39)
+    def test_IfNewFileExist(self):
+        """Check a file created by the save_to_file method exists"""
+        r1 = Square(10, 7, 2, 8)
+        r2 = Square(2, 4, 5, 9)
+        Square.save_to_file([r1, r2])
+        with open("Square.json") as f:
+            self.assertEqual(len(f.read()), 77)
 
     def test_save_to_file_None(self):
         Square.save_to_file(None)
