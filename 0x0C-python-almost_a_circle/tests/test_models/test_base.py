@@ -21,7 +21,7 @@ from models.square import Square
 class TestBase_instantiation(unittest.TestCase):
     """Unittests for testing instantiation of the Base class."""
 
-    def test_baseClassExistance(self):
+    def test_baseClassExistance(self:
         """Check if the class exist or not"""
         base = Base()
         self.assertEqual(base.__class__.__name__, "Base")
