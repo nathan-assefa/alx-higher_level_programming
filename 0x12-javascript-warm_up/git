@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+chmod +x *.js
+git add .
+git commit -m '0x12-javascript-warm_up'
+git push
