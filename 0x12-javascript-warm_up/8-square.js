@@ -4,7 +4,7 @@ const X = process.argv[2];
 if (isNaN(X)) {
   console.log('Missing size');
 } else {
-  for (let i = 0; i < parseInt(X); i++) {
+  for (let i = 0; i < Number(X); i++) {
     console.log('X'.repeat(parseInt(X)));
   }
 }
