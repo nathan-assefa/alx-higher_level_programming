@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-if (isNaN(process.argv[2]) {
+if (isNaN(process.argv[2])) {
   console.log('Missing number of occurrences');
 } else {
   for (let i = parseInt(process.argv[2]); i > 0; i--) {
