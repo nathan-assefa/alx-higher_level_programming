@@ -3,7 +3,7 @@
 exports.esrever = function (list) {
   const arr = [];
   for (const i of list) {
-    arr.unshift(i)
+    arr.unshift(i);
   }
-  return arr
-}
+  return arr;
+};
