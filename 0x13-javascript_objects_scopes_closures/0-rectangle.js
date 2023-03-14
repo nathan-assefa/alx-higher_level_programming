@@ -1,3 +1,3 @@
 #!/usr/bin/node
 
-const Rectangle = class {}
+export class Rectangle {};
