@@ -11,3 +11,5 @@ cr = db.cursor()
 
 cr.execute('SELECT states.id, states.name FROM states')
 [print(state) for state in cr.fetchall()]
+cr.close()
+db.close()
