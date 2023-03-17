@@ -1,12 +1,14 @@
 #!/usr/bin/python3
-# This script prints all the satetes from the database starting
-# + only with 'N'
+"""This script prints all the satetes from the database starting
++ only with 'N'"""
 
-from sys import argv
-import MySQLdb
 
-db = MySQLdb.connect(user=argv[1], passwd=argv[2], db=argv[3])
-cr = db.cursor()
+if __name__ == "__main__":
+    from sys import argv
+    import MySQLdb
 
-cr.execute('SELECT * FROM states WHERE name LIKE "N%"')
-[print(state) for state in cr.fetchall()]
+    db = MySQLdb.connect(user=argv[1], passwd=argv[2], db=argv[3])
+    cr = db.cursor()
+
+    cr.execute('SELECT * FROM states WHERE name LIKE "N%"')
+    [print(state) for state in cr.fetchall()]
