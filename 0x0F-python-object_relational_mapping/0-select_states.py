@@ -1,7 +1,7 @@
 #!/usr/bin/python3
+"""This script takes 3 argument and lists all the states
++ the data base"""
 
-# This script takes 3 argument and lists all the states
-# + the data base
 
 from sys import argv
 import MySQLdb
