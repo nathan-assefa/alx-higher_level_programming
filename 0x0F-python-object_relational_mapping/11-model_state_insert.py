@@ -19,3 +19,9 @@ if __name__ == "__main__":
     session = Session()
     session.add(State(name='Louisiana'))
     session.commit()
+    s = session.query(State).filter(State.name == 'Louisiana').all()
+    if s:
+        for state in s:
+            print("{}".format(state.id))
+    else:
+        print("Not found")
