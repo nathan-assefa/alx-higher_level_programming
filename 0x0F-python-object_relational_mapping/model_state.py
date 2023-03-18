@@ -6,13 +6,14 @@ using ORM"""
 if __name__ == "__main__":
     from sqlalchemy.ext.declarative import declarative_base
     from sqlalchemy import Column, Integer, String
-    from sqlalchemy.orm import sessionmaker
 
     Base = declarative_base()
     class State(Base):
+        """This class defines the methadata for the table 'states'"""
+
         __tablename__ = 'states'
 
         id = column(integer, primary_key=true, unique=true)
-        name = column(string(30), nulable=false)
+        name = column(string(30), nullable=false)
         
 
