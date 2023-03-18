@@ -13,7 +13,7 @@ if __name__ == "__main__":
 
         __tablename__ = 'states'
 
-        id = Column(integer, primary_key=true, unique=true)
-        name = Column(string(30), nullable=false)
+        id = Column(Integer, primary_key=true, unique=true)
+        name = Column(String(30), nullable=false)
         
 
