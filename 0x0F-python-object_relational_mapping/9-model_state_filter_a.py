@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" This script prints all the states starting from letter 'a' 
+""" This script prints all the states starting from letter 'a'
 from the database using ORM tecnique"""
 from model_state import Base, State
 from sqlalchemy.orm import sessionmaker
