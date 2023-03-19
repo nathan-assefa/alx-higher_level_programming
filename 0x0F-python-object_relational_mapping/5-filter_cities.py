@@ -1,17 +1,19 @@
 #!/usr/bin/python3
-
-# This script prints all the cities related to a specific state
-
-from sys import argv
+# Displays all cities of a given state from the
+# states table of the database hbtn_0e_4_usa.
+# Safe from SQL injections.
+# Usage: ./5-filter_cities.py <mysql username> \
+#                             <mysql password> \
+#                             <database name> \
+#                             <state name searched>
+import sys
 import MySQLdb
 
-db = MySQLdb.connect(user=argv[1], passwd=argv[2], db=argv[3])
-cr = db.cursor()
-
-cr.execute(
-    "SELECT cities.name FROM cities \
-    LEFT JOIN states ON states.id = cities.state_id WHERE states.name LIKE BINARY '{}'".format(argv[4])
-)
-for i in cr.fetchall():
-    [print(city, end=", ") for city in i]
-print()
+if __name__ == "__main__":
+    db = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
+    c = db.cursor()
+    c.execute("SELECT * FROM `cities` as `c` \
+                INNER JOIN `states` as `s` \
+                   ON `c`.`state_id` = `s`.`id` \
+                ORDER BY `c`.`id`")
+    print(", ".join([ct[2] for ct in c.fetchall() if ct[4] == sys.argv[4]]))
