@@ -12,11 +12,11 @@ if __name__ == "__main__":
     engine = create_engine("mysql+mysqldb://{}:{}@localhost/{}"
                            .format(sys.argv[1], sys.argv[2], sys.argv[3]),
                            pool_pre_ping=True)
-    Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
     state = session.query(State).all()
     for s in state:
         print("{}: {}".format(s.id, s.name))
         [print("\t{}: {}".format(city.id, city.name)) for city in s.cities]
+
     session.commit()
