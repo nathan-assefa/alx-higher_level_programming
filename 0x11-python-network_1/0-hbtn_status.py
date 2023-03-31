@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-import urllib.request
 """ Fetching data from https://alx-intranet.hbtn.io/status """
 
 
 if __name__ == "__main__":
+    import urllib.request
     """ Fetching data from URL """
 
     with urllib.request.urlopen('https://alx-intranet.hbtn.io/status') as res:
