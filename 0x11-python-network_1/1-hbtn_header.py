@@ -1,15 +1,16 @@
 #!/usr/bin/python3
-"""A script that:
-- takes in a URL,
-- sends a request to the URL and displays the value
-- of the X-Request-Id variable found in the header ofthe response.
-"""
-import sys
 import urllib.request
+from sys import argv
+"""
+    Sends request to URL and displays the value of the
+    X-Request-Id variable found in the header of the response.
+"""
+
 
 if __name__ == "__main__":
-    url = sys.argv[1]
+    with urllib.request.urlopen(argv[1]) as res:
+        # since the 'get' method only work with dictionary, we first need to change the headers into dict
+        print(res.headers.__dict__.get('X-Request-Id'))
 
-    request = urllib.request.Request(url)
-    with urllib.request.urlopen(request) as response:
-        print(dict(response.headers).get("X-Request-Id"))
+        # here we can also use getheader method wich recieves the key and returns the value
+        # print(res.getheader('X-Request-I'))
