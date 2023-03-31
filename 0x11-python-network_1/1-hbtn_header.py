@@ -11,8 +11,12 @@ if __name__ == "__main__":
     """ This code fetches the data in a variable """
 
     with urllib.request.urlopen(argv[1]) as res:
-        # since the 'get' method only work with dictionary, we first need to change the headers into dict
-        print(res.headers.__dict__.get('X-Request-Id'))
+        # since the 'get' method only work with dictionary,
+        # +we first need to change the headers into dict
 
-        # here we can also use getheader method wich recieves the key and returns the value
+        print(dict(res.headers).get('X-Request-Id'))
+        # we converted to 'dict' since get only works with dict
+
+        # here we can also use getheader method wich
+        # +recieves the key and returns the value
         # print(res.getheader('X-Request-I'))
