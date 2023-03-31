@@ -1,22 +1,18 @@
 #!/usr/bin/python3
-""" sends a POST request to http://0.0.0.0:5000/search_user
-with the letter as a parameter. """
+"""takes letter and sends a POST req to http://0.0.0.0:5000/search_user
+with the letter as a parameter."""
+import requests
+from sys import argv
 
 
-if __name__ == "__main__":
-    """ Posting a letter to a URL """
-    import requests
-    from sys import argv
-
-    url = 'http://0.0.0.0:5000/search_user'
-
-    r = requests.post(url, data={'q': argv[1] if len(argv) > 1 else ""})
+if __name__ == '__main__':
+    letter = {'q': argv[1][0] if len(argv) > 1 else ''}
+    r = requests.post('http://0.0.0.0:5000/search_user', data=letter)
     try:
-        json = r.json()
-
-        if json:
-            print("[{}]: {}".format(r.json().get('id'), r.json().get('name')))
+        response = r.json()
+        if response:
+            print('[{}] {}'.format(response.get('id'), response.get('name')))
         else:
-            print("No result")
-    except:
-        print("Not a valid JSON")
+            print('No result')
+    except ValueError:
+        print('Not a valid JSON')
