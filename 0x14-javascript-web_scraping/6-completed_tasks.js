@@ -7,14 +7,13 @@ request(url, (error, response, body) => {
   if (error) {
     console.error(error);
   } else {
-    const res = JSON.parse(body);
+    const result = JSON.parse(body);
     const ans = {};
-    for (const r of res) {
-      // ans.r['userId'] += res.completed ? 1: 0
-      if (r.completed && !ans[r.userId]) {
-        ans[r.userId] = 1;
-      } else if (r.completed) {
-        ans[r.userId] += 1;
+    for (const res of result) {
+      if (res.completed && !ans[res.userId]) {
+        ans[res.userId] = 1;
+      } else if (res.completed) {
+        ans[res.userId] += 1;
       }
     }
     console.log(ans);
