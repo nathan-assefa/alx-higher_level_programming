@@ -1,12 +1,12 @@
 #!/usr/bin/node
 // reads a file
 
-const fs = require('fs').promises;
+const fs = require('fs');
 
-fs.readFile(process.argv[2], 'utf8')
-  .then(data => {
-    console.log(data);
-  })
-  .catch(err => {
+fs.readFile(process.argv[2], 'utf-8', (err, data) => {
+  if (err) {
     console.error(err);
-  });
+    return;
+  }
+  console.log(data);
+});
